@@ -7,32 +7,32 @@ export default function CartColumns() {
         <div className="row">
           <div className="col-10 mx-auto col-lg-2">
             <p>
-              <strong>מוצרים</strong>
+              <h4>מוצרים</h4>
             </p>
           </div>
           <div className="col-10 mx-auto col-lg-2">
             <p>
-              <strong>שם המוצר</strong>
+              <h4>שם המוצר</h4>
             </p>
           </div>
           <div className="col-10 mx-auto col-lg-2">
             <p>
-              <strong>מחיר</strong>
+              <h4>מחיר</h4>
             </p>
           </div>
           <div className="col-10 mx-auto col-lg-2">
             <p>
-              <strong>כמות</strong>
+              <h4>כמות</h4>
             </p>
           </div>
           <div className="col-10 mx-auto col-lg-2">
             <p>
-              <strong>הסר</strong>
+              <h4>הסר</h4>
             </p>
           </div>
           <div className="col-10 mx-auto col-lg-2">
             <p>
-              <strong>סך הכל</strong>
+              <h4>סך הכל</h4>
             </p>
           </div>
         </div>

@@ -43,7 +43,7 @@ export default class Modal extends Component {
                           }}
                           cart
                         >
-                          המשך לעגלת הקניות
+                          לקופה
                         </ButtonContainer>
                       </Link>
                     </div>
@@ -70,6 +70,6 @@ const ModalContainer = styled.div`
   justify-content: center;
 
   #modal {
-    background: var(--mainWhite);
+    background: white;
   }
 `;
