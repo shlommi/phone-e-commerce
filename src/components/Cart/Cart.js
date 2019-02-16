@@ -19,7 +19,7 @@ export default class Cart extends Component {
                   <Title title="עגלת הקניות שלך" />
                   <CartColumns />
                   <CartList value={value} />
-                  <CartTotals value={value} />
+                  <CartTotals value={value} history={this.props.history} />
                 </React.Fragment>
               );
             } else {
