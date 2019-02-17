@@ -7,7 +7,7 @@ import styled from "styled-components";
 export default class Navbar extends Component {
   render() {
     return (
-      <NavWrapper className="navbar navbar-expand-sm  navbar-dark px-sm-5">
+      <NavWrapper className="navbar navbar-expand-lg  navbar-dark px-sm-5">
         <Link to="/">
           <img src={logowhite} alt="store" className="navbar-brand" />
         </Link>
