@@ -2,6 +2,7 @@ import React from "react";
 import { ProductConsumer } from "../context";
 import styled from "styled-components";
 import Title from "./Title";
+import { FaBookOpen } from "react-icons/fa";
 
 export default function About() {
   return (
@@ -12,7 +13,7 @@ export default function About() {
           return (
             <div className="py-5">
               <div className="container">
-                <Title title="אודות טוליפ" />
+                <Title title="אודות טוליפ" icon={<FaBookOpen />} />
                 <AboutWrapper>
                   <div className="card">
                     <img src={img} alt="about" className="card-img-top" />
