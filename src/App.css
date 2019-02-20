@@ -52,14 +52,3 @@ body {
   border-radius: 0 !important;
   border: 0.1rem solid var(--mainDark) !important;
 }
-
-.btn-black:hover {
-  background: var(--mainDark) !important;
-  color: var(--mainWhite) !important;
-}
-
-.cart-icon {
-  font-size: 1.2rem;
-  cursor: pointer;
-  color: var(--mainYellow);
-}

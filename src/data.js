@@ -1,7 +1,7 @@
 export const storeProducts = [
   {
     id: 1,
-    title: "ג'ל רטינול נגד קמטים - ויטמין A",
+    title: "ג'ל רטינול נגד קמטים",
     img: "img/product-1.jpg",
     price: 219,
     info:
@@ -12,7 +12,7 @@ export const storeProducts = [
   },
   {
     id: 2,
-    title: "קרם לטיפול בפיגמנטציה ולהבהרה",
+    title: "קרם לטיפול בפיגמנטציה",
     img: "img/product-2.jpg",
     price: 289,
     info:
@@ -34,7 +34,7 @@ export const storeProducts = [
   },
   {
     id: 4,
-    title: "ג'ל קריסטל לטיפול בסימני מתיחה וצלוליט",
+    title: "ג'ל לטיפול בסימני מתיחה",
     img: "img/product-4.jpg",
     price: 299,
     info:

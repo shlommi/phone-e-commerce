@@ -14,7 +14,7 @@ export default class Product extends Component {
             {value => {
               return (
                 <div
-                  className="img-container p-5"
+                  className="img-container p-4"
                   onClick={() => value.handleDetail(id)}
                 >
                   <Link to="/details">
@@ -92,7 +92,7 @@ const ProductWrapper = styled.div`
   }
 
   .card-img-top {
-    transition: all 0.09s ease-out;
+    transition: all 0.5s ease-in;
   }
 
   .img-container:hover .card-img-top {
@@ -109,7 +109,7 @@ const ProductWrapper = styled.div`
     color: var(--mainWhite);
     font-size: 1.4rem;
     border-radius: 0 0.5rem 0 0;
-    transform: translate(100%, 100%);
+    transform: translate(100%, 110%);
     transition: all 0.09s linear;
   }
 
