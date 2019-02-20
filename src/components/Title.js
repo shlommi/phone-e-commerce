@@ -8,9 +8,9 @@ export default function Title({ title, icon }) {
         <UpperTitle>
           <h3>{icon}</h3>
         </UpperTitle>
-        <h1 className="font-weight-bold text-blue">
+        <h2 className="font-weight-bold text-blue">
           <strong>{title}</strong>
-        </h1>
+        </h2>
       </div>
     </div>
   );
