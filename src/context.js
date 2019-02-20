@@ -1,10 +1,11 @@
 import React, { Component } from "react";
-import { storeProducts, detailProduct } from "./data";
+import { storeProducts, detailProduct, aboutTulip } from "./data";
 
 const ProductContext = React.createContext(); //creating the context Object
 
 class ProductProvider extends Component {
   state = {
+    aboutTulip,
     products: [],
     detailProduct,
     cart: [],

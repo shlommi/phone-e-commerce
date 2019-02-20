@@ -16,13 +16,13 @@ export default class Navbar extends Component {
         </div>
 
         <div className="menu-wrapper">
-          <Link to="/" className="nav-link">
+          <Link to="/about" className="nav-link">
             אודות טוליפ
           </Link>
           <Link to="/" className="nav-link">
             המוצרים שלנו
           </Link>
-          <Link to="/" className="nav-link">
+          <Link to="/contact" className="nav-link">
             צרי קשר
           </Link>
         </div>

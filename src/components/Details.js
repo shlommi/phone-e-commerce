@@ -36,6 +36,8 @@ export default class Details extends Component {
                   <div>
                     <Link to="/">
                       <ButtonContainer>חזרה למוצרים</ButtonContainer>
+                    </Link>
+                    <Link to="/details">
                       <ButtonContainer
                         onClick={() => {
                           value.addToCart(id);
@@ -48,6 +50,9 @@ export default class Details extends Component {
                           ? "המוצר קיים בעגלת קניות"
                           : "הוסף מוצר לעגלת קניות"}
                       </ButtonContainer>
+                    </Link>
+                    <Link to="/cart">
+                      <ButtonContainer>לקופה</ButtonContainer>
                     </Link>
                   </div>
                   {/* end of buttons */}
