@@ -11,19 +11,19 @@ export default class Navbar extends Component {
         <div id="logo">
           <Link to="/" className="nav-link" id="logo">
             <img src={logowhite} alt="store" className="navbar-brand" />
-            <h2>טוליפ נטורל</h2>
+            טוליפ נטורל
           </Link>
         </div>
 
         <div className="menu-wrapper">
           <Link to="/" className="nav-link">
-            <h2> אודות טוליפ</h2>
+            אודות טוליפ
           </Link>
           <Link to="/" className="nav-link">
-            <h2>המוצרים שלנו</h2>
+            המוצרים שלנו
           </Link>
           <Link to="/" className="nav-link">
-            <h2> צרי קשר</h2>
+            צרי קשר
           </Link>
         </div>
         <div id="cart">
@@ -44,38 +44,105 @@ export default class Navbar extends Component {
 const NavWrapper = styled.nav`
   background: var(--mainBlue);
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: 250px, 530px, 150px;
   align-items: center;
   grid-auto-flow: row;
-
+  .nav-link {
+      font-size: 1.7rem;
+    }
+    
 
   .nav-link {
     color: var(--mainWhite) !important;
-    font-size: 1.4rem;
   }
-#logo {
- grid-column: 1 / 3;
- display: flex;
-  justify-content: center;
-}
 
-.menu-wrapper {
-  grid-column: 4 / 10;
-  display: flex;
-  justify-content: center;
-
-}
-#cart {
-  grid-column: 11 / 13;
-   justify-self: center;
-}
   img {
     width: 1.3rem;
     height: 3rem;
   }
+ 
+    #logo {
+      grid-column: 1 / 2;
+      display: flex;
+      justify-content: center;
+    }
 
-  // for mobile
+    .menu-wrapper {
+      grid-column: 2/ 3;
+      display: flex;
+      justify-content: center;
+    }
 
-  @media (max-width: 670px) {
+    #cart {
+      grid-column: 3 / 4;
+      justify-self: center;
+    }
+
+
+  @media (max-width: 900px) {
+
+    grid-template-rows: 1fr 1fr;
+
+    .nav-link {
+      font-size: 1.6rem;
+    }
+    
+     img {
+    width: 1rem;
+    height: 2.7rem;
+    }
+    
+    #logo {
+      grid-column: 1 / 4;
+      grid-row: 1 / 2;
+      display: flex;
+      justify-content: center;
+    }
+
+    .menu-wrapper {
+      grid-column: 1 / 4;
+       grid-row: 2 / 3
+
+      display: flex;
+      justify-content: center;
+    }
+
+    #cart {
+     display: none;
+    }
+
+    
+  }
+  @media (max-width: 446px) {
+
+    .nav-link {
+      font-size: 1.3rem;
+    }
+
+      img {
+    width: .7rem;
+    height: 2rem;
+    }
+
+    @media (max-width: 386px) {
+
+    .nav-link {
+      font-size: 0.9rem;
+    }
+
+     #logo{
+      font-size: 1.4rem;
+    }
+
+      img {
+    width: 1rem;
+    height: 2.2rem;
+    }
+    
+
+  }
+
+
+
 
 `;
