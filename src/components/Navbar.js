@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import logowhite from "../logowhite.png";
 import { ButtonContainer } from "./Button";
 import styled from "styled-components";
+import { FiShoppingCart } from "react-icons/fi";
 
 export default class Navbar extends Component {
   render() {
@@ -24,6 +25,9 @@ export default class Navbar extends Component {
           </Link>
           <Link to="/contact" className="nav-link">
             צרי קשר
+          </Link>
+          <Link to="cart" className="nav-link" id="cart-mobile">
+            <FiShoppingCart />
           </Link>
         </div>
         <div id="cart">
@@ -47,8 +51,12 @@ const NavWrapper = styled.nav`
   grid-template-columns: 250px, 530px, 150px;
   align-items: center;
   grid-auto-flow: row;
+
+   #cart-mobile {
+    display: none;
+  }
   .nav-link {
-      font-size: 1.7rem;
+      font-size: 3.7vw;
     }
     
 
@@ -61,16 +69,18 @@ const NavWrapper = styled.nav`
     height: 3rem;
   }
  
-    #logo {
+  #logo {
       grid-column: 1 / 2;
       display: flex;
       justify-content: center;
-    }
+      align-items: center;
+  }
 
     .menu-wrapper {
       grid-column: 2/ 3;
       display: flex;
       justify-content: center;
+      align-items: center;
     }
 
     #cart {
@@ -78,18 +88,29 @@ const NavWrapper = styled.nav`
       justify-self: center;
     }
 
+   @media (min-width: 899px) {
+      .nav-link {
+      font-size: 2rem;
+     }
+   }
 
   @media (max-width: 900px) {
 
     grid-template-rows: 1fr 1fr;
 
+    #cart-mobile {
+      display: block;
+      align-self: start;
+
+    }
+
     .nav-link {
-      font-size: 1.6rem;
+      // font-size: 1.6rem;
     }
     
-     img {
-    width: 1rem;
-    height: 2.7rem;
+    img {
+     width: 1rem;
+     height: 2.7rem;
     }
     
     #logo {
@@ -101,7 +122,7 @@ const NavWrapper = styled.nav`
 
     .menu-wrapper {
       grid-column: 1 / 4;
-       grid-row: 2 / 3
+      grid-row: 2 / 3
 
       display: flex;
       justify-content: center;
@@ -115,32 +136,59 @@ const NavWrapper = styled.nav`
   }
   @media (max-width: 446px) {
 
-    .nav-link {
-      font-size: 1.3rem;
+    img {
+     width: .7rem;
+     height: 2rem;
     }
 
-      img {
-    width: .7rem;
-    height: 2rem;
-    }
+  @media (max-width: 386px) {
 
-    @media (max-width: 386px) {
+    #cart-mobile {
+      display: block;
+    }  
 
-    .nav-link {
-      font-size: 0.9rem;
-    }
 
      #logo{
       font-size: 1.4rem;
     }
 
-      img {
-    width: 1rem;
-    height: 2.2rem;
+    img {
+      width: 1rem;
+      height: 2.2rem;
     }
     
 
   }
+  @media (max-width: 360px) {
+
+    #cart-mobile {
+      display: block;
+    }  
+
+     #logo{
+      font-size: 1.2rem;
+    }
+
+    img {
+      width: 1rem;
+      height: 2rem;
+    }
+    
+    @media (max-width: 320px) {
+
+    #cart-mobile {
+      display: block;
+    }  
+
+     #logo{
+      font-size: 1rem;
+    }
+
+    img {
+      width: 0.8rem;
+      height: 2rem;
+    }
+    
 
 
 
