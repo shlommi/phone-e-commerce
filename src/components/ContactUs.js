@@ -56,78 +56,111 @@ export default function ContactUs() {
                 return (
                   <React.Fragment>
                     <form onSubmit={handleSubmit}>
-                      <div className="form-group">
-                        <label htmlFor="name" style={{ display: "block" }}>
-                          שם מלא
-                        </label>
-                        <input
-                          id="name"
-                          type="text"
-                          className="form-control"
-                          value={values.name}
-                          onChange={handleChange}
-                          onBlur={handleBlur}
-                          placeholder="שם מלא"
-                        />
-                      </div>
-                      <div className="form-group">
-                        <label htmlFor="phone" style={{ display: "block" }}>
-                          טלפון
-                        </label>
-                        <input
-                          id="phone"
-                          type="text"
-                          className="form-control"
-                          value={values.phone}
-                          onChange={handleChange}
-                          onBlur={handleBlur}
-                          placeholder="טלפון"
-                        />
-                      </div>
-                      <div className="form-group">
-                        <label htmlFor="email" style={{ display: "block" }}>
-                          דואר אלקטרוני
-                        </label>
-                        <input
-                          id="email"
-                          type="email"
-                          className="form-control"
-                          value={values.email}
-                          onChange={handleChange}
-                          onBlur={handleBlur}
-                          placeholder="דואר אלקטרוני"
-                        />
-                      </div>
-                      <div class="form-group">
-                        <label htmlFor="dropdown" style={{ display: "block" }}>
-                          מטרת הפנייה
-                        </label>
-                        <select
-                          id="dropdown"
-                          class="form-control"
-                          value={values.dropdown}
-                          onChange={handleChange}
-                          onBlur={handleBlur}
-                        >
-                          <option>פנייה כללית</option>
-                          <option>הזמנה קיימת</option>
-                          <option>מתעניינת במוצר</option>
-                          <option>ביטול הזמנה</option>
-                        </select>
-                      </div>
-                      <div class="form-group">
-                        <label htmlFor="userText" style={{ display: "block" }}>
-                          תיאור הפנייה
-                        </label>
-                        <textarea
-                          id="userText"
-                          class="form-control"
-                          value={values.userText}
-                          onChange={handleChange}
-                          onBlur={handleBlur}
-                          rows="3"
-                        />
-                      </div>
+                      <label htmlFor="name" style={{ display: "block" }}>
+                        שם מלא
+                      </label>
+                      <input
+                        id="name"
+                        type="text"
+                        className={
+                          errors.name && touched.name
+                            ? "form-control is-invalid"
+                            : "form-control"
+                        }
+                        value={values.name}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        placeholder="שם מלא"
+                      />
+                      {errors.name && touched.name && (
+                        <div className="invalid-feedback">{errors.name}</div>
+                      )}
+
+                      <label htmlFor="phone" style={{ display: "block" }}>
+                        טלפון
+                      </label>
+                      <input
+                        id="phone"
+                        type="text"
+                        className={
+                          errors.phone && touched.phone
+                            ? "form-control is-invalid"
+                            : "form-control"
+                        }
+                        value={values.phone}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        placeholder="טלפון"
+                      />
+                      {errors.phone && touched.phone && (
+                        <div className="invalid-feedback">{errors.phone}</div>
+                      )}
+
+                      <label htmlFor="email" style={{ display: "block" }}>
+                        דואר אלקטרוני
+                      </label>
+                      <input
+                        id="email"
+                        type="email"
+                        className={
+                          errors.email && touched.email
+                            ? "form-control is-invalid"
+                            : "form-control"
+                        }
+                        value={values.email}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        placeholder="דואר אלקטרוני"
+                      />
+                      {errors.email && touched.email && (
+                        <div classeName="invalid-feedback">{errors.phone}</div>
+                      )}
+
+                      <label htmlFor="dropdown" style={{ display: "block" }}>
+                        מטרת הפנייה
+                      </label>
+                      <select
+                        id="dropdown"
+                        className={
+                          errors.dropdown && touched.dropdown
+                            ? "form-control is-invalid"
+                            : "form-control"
+                        }
+                        value={values.dropdown}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                      >
+                        <option>פנייה כללית</option>
+                        <option>הזמנה קיימת</option>
+                        <option>מתעניינת במוצר</option>
+                        <option>ביטול הזמנה</option>
+                      </select>
+                      {errors.dropdown && touched.dropdown && (
+                        <div classeName="invalid-feedback">
+                          {errors.dropdown}
+                        </div>
+                      )}
+
+                      <label htmlFor="userText" style={{ display: "block" }}>
+                        תיאור הפנייה
+                      </label>
+                      <textarea
+                        id="userText"
+                        className={
+                          errors.userText && touched.userText
+                            ? "form-control is-invalid"
+                            : "form-control"
+                        }
+                        value={values.userText}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        rows="3"
+                      />
+                      {errors.userText && touched.userText && (
+                        <div classeName="invalid-feedback">
+                          {errors.userText}
+                        </div>
+                      )}
 
                       <div className="form-group form-check">
                         <input type="checkbox" className="form-check-input" />

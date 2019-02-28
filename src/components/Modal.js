@@ -21,7 +21,7 @@ export default class Modal extends Component {
                   <div className="row">
                     <div
                       id="modal"
-                      className="col-8 mx-auto col-md-6 col-lg-4 text-center p-5"
+                      className="col-12 mx-auto col-md-6 col-lg-4 text-center p-5"
                     >
                       <h5> מוצר נוסף לעגלת קניות </h5>
                       <img src={img} className="img-fluid" alt="product" />

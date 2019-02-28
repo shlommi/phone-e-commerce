@@ -13,17 +13,17 @@ export default class Details extends Component {
             <div className="container py-5">
               {/* title */}
               <div className="row">
-                <div className="col-10 mx-auto text-center text-blue my-5">
+                <div className="col-12 mx-auto text-center text-blue my-5">
                   <h1>{title}</h1>
                 </div>
               </div>
               {/* end of title */}
               {/* product info */}
               <div className="row">
-                <div className="col-10 mx-auto col-md-6 my-3">
+                <div className="col-12 mx-auto col-md-6 my-3">
                   <img src={img} className="img-fluid" alt="imgDetail" />
                 </div>
-                <div className="col-10 mx-auto col-md-6 my-3">
+                <div className="col-12 mx-auto col-md-6 my-3">
                   <h4 className="text-blue">
                     <strong>
                       מחיר: <span>₪</span>
