@@ -1,6 +1,5 @@
 import React from "react";
 import { ProductConsumer } from "../context";
-import styled from "styled-components";
 import Title from "./Title";
 import { FaBookOpen } from "react-icons/fa";
 import IconsAbout from "./IconsAbout";

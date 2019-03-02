@@ -3,19 +3,17 @@ import { Link } from "react-router-dom";
 import logowhite from "../logowhite.png";
 import { ButtonContainer } from "./Button";
 import styled from "styled-components";
-import { FiShoppingCart } from "react-icons/fi";
 
 export default class Navbar extends Component {
   render() {
     return (
       <NavWrapper className="nav-wrapper container-fluid">
         <div id="logo">
-          <Link to="/" className="nav-link" id="logo">
-            <img src={logowhite} alt="store" className="navbar-brand" />
+          <img src={logowhite} alt="store" className="navbar-brand" />
+          <Link to="/" className="nav-link lead">
             טוליפ נטורל
           </Link>
         </div>
-
         <div className="menu-wrapper">
           <Link to="/about" className="nav-link">
             אודות טוליפ
@@ -25,9 +23,6 @@ export default class Navbar extends Component {
           </Link>
           <Link to="/contact" className="nav-link">
             צרי קשר
-          </Link>
-          <Link to="cart" className="nav-link" id="cart-mobile">
-            <FiShoppingCart />
           </Link>
         </div>
         <div id="cart">
@@ -48,149 +43,113 @@ export default class Navbar extends Component {
 const NavWrapper = styled.nav`
   background: var(--mainBlue);
   display: grid;
-  grid-template-columns: 250px, 530px, 150px;
-  align-items: center;
-  grid-auto-flow: row;
-
-   #cart-mobile {
-    display: none;
-  }
-  .nav-link {
-      font-size: 3.7vw;
-    }
-    
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, auto-fill);
 
   .nav-link {
+    font-size: 4vw;
     color: var(--mainWhite) !important;
   }
 
-  img {
-    width: 1.3rem;
-    height: 3rem;
-  }
- 
+  .nav-link,
   #logo {
-      grid-column: 1 / 2;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    font-size: 4.5vw;
   }
 
+  img {
+    width: 4vw;
+  }
+
+  div button {
+    font-size: 4vw;
+  }
+
+  #logo {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    display: flex;
+    padding: 0;
+    margin: 0.5rem auto 0 auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #cart {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    justify-self: center;
+    margin: 0.5rem auto;
+  }
+
+  .menu-wrapper {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+  }
+
+  // Medium devices (tablets, 768px and up)
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, auto-fill);
+    grid-template-rows: repeat(2, auto-fill);
+
+    #logo {
+      grid-column: 1 / 4;
+      grid-row: 1 / 2;
+      font-size: 2vw;
+    }
+
     .menu-wrapper {
-      grid-column: 2/ 3;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+      justify-self: start;
     }
 
     #cart {
       grid-column: 3 / 4;
-      justify-self: center;
+      grid-row: 2 / 3;
     }
-
-   @media (min-width: 899px) {
-      .nav-link {
-      font-size: 2rem;
-     }
-   }
-
-  @media (max-width: 900px) {
-
-    grid-template-rows: 1fr 1fr;
-
-    #cart-mobile {
-      display: block;
-      align-self: start;
-
-    }
-
     .nav-link {
-      // font-size: 1.6rem;
+      font-size: 2.5vw;
     }
-    
+
     img {
-     width: 1rem;
-     height: 2.7rem;
+      width: 3vw;
     }
-    
-    #logo {
-      grid-column: 1 / 4;
-      grid-row: 1 / 2;
-      display: flex;
-      justify-content: center;
+
+    div button {
+      font-size: 2.5vw;
     }
+  }
+
+  // Extra large devices (large desktops, 1200px and up)
+  @media (min-width: 1200px) {
+    grid-template-columns: 1fr;
+    justify-content: space-between;
 
     .menu-wrapper {
-      grid-column: 1 / 4;
-      grid-row: 2 / 3
-
-      display: flex;
-      justify-content: center;
+      grid-row: 2 / 3;
     }
 
     #cart {
-     display: none;
+      grid-row: 2 / 3;
     }
 
-    
+    #logo {
+      font-size: 0.5vw;
+    }
+    .nav-link {
+      font-size: 2vw;
+    }
+
+    img {
+      width: 2vw;
+    }
+
+    div button {
+      font-size: 1.5vw;
+    }
   }
-  @media (max-width: 446px) {
-
-    img {
-     width: .7rem;
-     height: 2rem;
-    }
-
-  @media (max-width: 386px) {
-
-    #cart-mobile {
-      display: block;
-    }  
-
-
-     #logo{
-      font-size: 1.4rem;
-    }
-
-    img {
-      width: 1rem;
-      height: 2.2rem;
-    }
-    
-
-  }
-  @media (max-width: 360px) {
-
-    #cart-mobile {
-      display: block;
-    }  
-
-     #logo{
-      font-size: 1.2rem;
-    }
-
-    img {
-      width: 1rem;
-      height: 2rem;
-    }
-    
-    @media (max-width: 320px) {
-
-    #cart-mobile {
-      display: block;
-    }  
-
-     #logo{
-      font-size: 1rem;
-    }
-
-    img {
-      width: 0.8rem;
-      height: 2rem;
-    }
-    
-
-
-
-
 `;
