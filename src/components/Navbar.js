@@ -9,7 +9,7 @@ export default class Navbar extends Component {
     return (
       <NavWrapper className="nav-wrapper container-fluid">
         <div id="logo">
-          <img src={logowhite} alt="store" className="navbar-brand" />
+          <img src={logowhite} alt="store" />
           <Link to="/" className="nav-link lead">
             טוליפ נטורל
           </Link>
@@ -25,7 +25,7 @@ export default class Navbar extends Component {
             צרי קשר
           </Link>
         </div>
-        <div id="cart">
+        <div className="cart">
           <Link to="/cart">
             <ButtonContainer>
               <span className="mr-2">
@@ -51,20 +51,16 @@ const NavWrapper = styled.nav`
     color: var(--mainWhite) !important;
   }
 
-  .nav-link,
-  #logo {
-    font-size: 4.5vw;
-  }
-
   img {
     width: 4vw;
   }
 
   div button {
-    font-size: 4vw;
+    font-size: 2.8vw;
   }
 
   #logo {
+    font-size: 4.5vw;
     grid-column: 1 / 2;
     grid-row: 1 / 2;
     display: flex;
@@ -75,11 +71,12 @@ const NavWrapper = styled.nav`
     align-items: center;
   }
 
-  #cart {
+  .cart {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
     justify-self: center;
-    margin: 0.5rem auto;
+    align-self: center;
+    color: var(--mainWhite) !important;
   }
 
   .menu-wrapper {
@@ -92,25 +89,24 @@ const NavWrapper = styled.nav`
 
   // Medium devices (tablets, 768px and up)
   @media (min-width: 768px) {
-    grid-template-columns: repeat(3, auto-fill);
+    grid-template-columns: repeat(1, auto-fill);
     grid-template-rows: repeat(2, auto-fill);
 
     #logo {
-      grid-column: 1 / 4;
+      grid-column: 1 / -1;
       grid-row: 1 / 2;
       font-size: 2vw;
     }
 
     .menu-wrapper {
-      grid-column: 1 / 2;
       grid-row: 2 / 3;
-      justify-self: start;
     }
 
-    #cart {
-      grid-column: 3 / 4;
+    .cart {
       grid-row: 2 / 3;
+      margin-right: 80vw;
     }
+
     .nav-link {
       font-size: 2.5vw;
     }
@@ -120,7 +116,7 @@ const NavWrapper = styled.nav`
     }
 
     div button {
-      font-size: 2.5vw;
+      font-size: 2vw;
     }
   }
 
@@ -133,7 +129,7 @@ const NavWrapper = styled.nav`
       grid-row: 2 / 3;
     }
 
-    #cart {
+    .cart {
       grid-row: 2 / 3;
     }
 
