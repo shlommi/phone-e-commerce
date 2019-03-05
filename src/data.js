@@ -151,3 +151,18 @@ export const checkoutPngs = [
     alt: "paypalcard"
   }
 ];
+
+export const footerIcons = [
+  {
+    img: "img/commonity_trust.png",
+    alt: "commonity_trust"
+  },
+  {
+    img: "img/made in israel.png",
+    alt: "made in israel"
+  },
+  {
+    img: "img/non-on-animals.png",
+    alt: "non-on-animals"
+  }
+];
