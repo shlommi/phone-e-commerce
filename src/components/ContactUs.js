@@ -25,11 +25,14 @@ export default function ContactUs() {
                 dropdown: "",
                 userText: ""
               }}
-              onSubmit={(values, { setSubmitting }) => {
+              onSubmit={(values, { setSubmitting, resetForm }) => {
                 setTimeout(() => {
                   alert(JSON.stringify(values, null, 2));
                   setSubmitting(false);
                 }, 500);
+                setTimeout(() => {
+                  resetForm();
+                }, 700);
               }}
               validationSchema={Yup.object().shape({
                 name: Yup.string().required("Required"),

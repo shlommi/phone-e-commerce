@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { checkoutPngs, footerIcons } from "../data";
 
 import logowhite from "../logowhite.png";
+import { Formik } from "formik";
+import * as Yup from "yup";
 
 export default function Footer() {
   return (
@@ -56,19 +58,70 @@ export default function Footer() {
               return <img src={item.img} alt={item.alt} />;
             })}
           </div>
-
-          <form className="content-wrapper__form">
-            <p>רוצה לקבל מבצעים והטבות?</p>
-            <input
-              type="text"
-              name="footerMail"
-              className="content-wrapper__form__input"
-              placeholder="הכניסי כתובת מייל"
-            />
-            <button className="content-wrapper__form__button" type="submit">
-              שילחי
-            </button>
-          </form>
+          <Formik
+            initialValues={{
+              email: ""
+            }}
+            onSubmit={(values, { setSubmitting, resetForm }) => {
+              setTimeout(() => {
+                alert(JSON.stringify(values, null, 2));
+                setSubmitting(false);
+              }, 500);
+              setTimeout(() => {
+                resetForm();
+              }, 700);
+            }}
+            validationSchema={Yup.object().shape({
+              email: Yup.string()
+                .email()
+                .required("Required")
+                .isValid("not valid")
+            })}
+          >
+            {props => {
+              console.log(props);
+              const {
+                values,
+                isSubmitting,
+                handleChange,
+                handleBlur,
+                handleSubmit,
+                touched,
+                errors
+              } = props;
+              return (
+                <React.Fragment>
+                  <form className="form-box" onSubmit={handleSubmit}>
+                    <p>רוצה לקבל מבצעים והטבות?</p>
+                    <div className="input-box">
+                      <label htmlFor="email" style={{ display: "block" }} />
+                      <input
+                        type="email"
+                        name="email"
+                        autocomplete="off"
+                        id="email"
+                        value={values.email}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        className="input-box__input"
+                        placeholder="הכניסי כתובת מייל"
+                      />
+                      <button
+                        className="input-box__btn"
+                        type="submit"
+                        disabled={isSubmitting}
+                      >
+                        שילחי
+                      </button>
+                      {errors.name && touched.name && (
+                        <div className="invalid-feedback">{errors.name}</div>
+                      )}
+                    </div>
+                  </form>
+                </React.Fragment>
+              );
+            }}
+          </Formik>
         </div>
       </FooterWrapper>
     </React.Fragment>
@@ -77,6 +130,7 @@ export default function Footer() {
 
 const FooterWrapper = styled.div`
   background-color: var(--mainBlue);
+  min-height: 80vh;
   color: var(--mainWhite);
   padding: 1rem;
   font-size: 1.2rem;
@@ -155,36 +209,54 @@ const FooterWrapper = styled.div`
     }
   }
 
-  .content-wrapper__form {
+
+  .form-box {
     display: flex;
-    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 
-    &__input {
-      background: transparent;
-      font-size:18px;
-      color: var(--mainWhite);
-      padding:10px 10px 10px 5px;
-      display:block;
-      width:300px;
-      border:none;
-      border-bottom:1px solid var(--mainWhite);
+    .input-box {
+      display: flex;
+      flex: 0 0 60%;
 
-      &:focus {
-        outline:none; 
+
+      &__input {
+        font-size:16px;
+        background: transparent;
+        color: var(--mainWhite);
+        padding:10px 10px 10px 5px;
+        display:block;
+        border:none;
+        border-bottom:1px solid var(--mainWhite);
+
+        ::placeholder {
+          color: var(--mainWhite) !important;
+        }
+
+        &:focus {
+          outline:none; 
+        }
+
+     }
+
+      &__btn {
+        background: transparent;
+        font-size:18px;
+        color: var(--mainWhite);
+        border:none;
+        margin: 
+        border-bottom:1px solid var(--mainWhite);
       }
 
     }
 
-    &__button {
-      background: transparent;
-      display: block;
-      font-size:18px;
-      color: var(--mainWhite);
-      border:none;
-      margin: 
-      border-bottom:1px solid var(--mainWhite);
-    }
   } 
+
+ 
+
+
+
   @media (min-width: 768px) {
 
     .content-wrapper {
