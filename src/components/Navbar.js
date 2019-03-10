@@ -26,7 +26,7 @@ export default class Navbar extends Component {
         </div>
         <div className="cart">
           <Link to="/cart">
-            <button class="cart__button">
+            <button className="cart__button">
               <span className="mr-1">
                 <i className="fas fa-cart-plus" />
               </span>

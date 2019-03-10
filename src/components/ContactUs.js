@@ -167,7 +167,7 @@ export default function ContactUs() {
 
                       <div className="form-group form-check">
                         <input type="checkbox" className="form-check-input" />
-                        <label className="form-check-label" for="exampleCheck1">
+                        <label className="form-check-label">
                           ברצוני לקבל מידע על מבצעים ומוצרים באתר
                         </label>
                       </div>

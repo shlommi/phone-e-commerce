@@ -13,49 +13,65 @@ export default function Footer() {
       <FooterWrapper>
         <hr />
         <div className="content-wrapper">
-          <div className="nav-footer">
-            <Link to="/">דף הבית</Link>
-            <Link to="/">אודות טוליפ</Link>
-            <Link to="/">המוצרים שלנו</Link>
-            <Link to="/">צרי קשר</Link>
-          </div>
           <div className="logo">
             <div>
               <img src={logowhite} alt="store" />
             </div>
             <Link to="/">טוליפ נטורל</Link>
           </div>
-          <div className="social-icons-wrapper">
+          <div className="nav-footer ">
+            <Link to="/">דף הבית</Link>
+            <Link to="/about">אודות טוליפ</Link>
+            <Link to="/">המוצרים שלנו</Link>
+            <Link to="/contact">צרי קשר</Link>
+          </div>
+          <div className="social-icons-wrapper ">
             <span>עקבו אחרינו</span>
-            <Link to="/">
+            <a
+              rel="noopener noreferrer"
+              href="https://www.facebook.com/tulipnaturall/"
+              target="_blank"
+            >
               <span className="mr-2">
-                <i class="fab fa-facebook-square" />
+                <i className="fab fa-facebook-square" />
               </span>
-            </Link>
-            <Link to="/">
+            </a>
+            <a
+              rel="noopener noreferrer"
+              href="https://www.instagram.com/tulipnatural/"
+              target="_blank"
+            >
               <span className="mr-2">
-                <i class="fab fa-instagram" />
+                <i className="fab fa-instagram" />
               </span>
-            </Link>
-            <Link to="/">
+            </a>
+            <a
+              rel="noopener noreferrer"
+              href="https://twitter.com/TulipNatural"
+              target="_blank"
+            >
               <span className="mr-2">
-                <i class="fab fa-twitter" />
+                <i className="fab fa-twitter" />
               </span>
-            </Link>
-            <Link to="/">
+            </a>
+            <a
+              rel="noopener noreferrer"
+              href="https://www.youtube.com/channel/UCfcKoRWBolo4rf-8FYL3KLA"
+              target="_blank"
+            >
               <span className="mr-2">
-                <i class="fab fa-youtube-square" />
+                <i className="fab fa-youtube-square" />
               </span>
-            </Link>
+            </a>
           </div>
           <div className="checkout-icons-wrapper">
             {checkoutPngs.map(item => {
-              return <img src={item.img} alt={item.alt} />;
+              return <img key={item.alt} src={item.img} alt={item.alt} />;
             })}
           </div>
           <div className="footer-icons-wrapper">
             {footerIcons.map(item => {
-              return <img src={item.img} alt={item.alt} />;
+              return <img key={item.alt} src={item.img} alt={item.alt} />;
             })}
           </div>
           <Formik
@@ -79,7 +95,6 @@ export default function Footer() {
             })}
           >
             {props => {
-              console.log(props);
               const {
                 values,
                 isSubmitting,
@@ -98,7 +113,7 @@ export default function Footer() {
                       <input
                         type="email"
                         name="email"
-                        autocomplete="off"
+                        autoComplete="off"
                         id="email"
                         value={values.email}
                         onChange={handleChange}
@@ -122,6 +137,11 @@ export default function Footer() {
               );
             }}
           </Formik>
+
+          <div className="powered-by">
+            <p className="powered-by__meaz">מאז 2001</p>
+            <p className="powered-by__text">powered by ShlomiCohen</p>
+          </div>
         </div>
       </FooterWrapper>
     </React.Fragment>
@@ -134,7 +154,8 @@ const FooterWrapper = styled.div`
   color: var(--mainWhite);
   padding: 1rem;
   font-size: 1.2rem;
-   
+  position: relative;
+
 
   hr {
     width: 50vw;
@@ -142,6 +163,7 @@ const FooterWrapper = styled.div`
     background-color: var(--mainWhite) !important;
     margin: 10px auto;
   }
+
 
   .logo {
     display: none;
@@ -161,11 +183,18 @@ const FooterWrapper = styled.div`
   }
 
   .content-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
+
+    .powered-by {
+      text-align: center;
+      position: bottom;
+      padding: 0;
+      bottom:0;
+    }
+
+
   }
+
 
   .nav-footer {
     display: flex;
@@ -181,32 +210,34 @@ const FooterWrapper = styled.div`
     margin-bottom: 1.3rem;
     align-items: end;
     justify-content: center;
-    & span {
-      margin-left: 0.6rem;
-    }
+
+      & span {
+        margin-left: 0.6rem;
+      }
   }
 
   .checkout-icons-wrapper {
     display: flex;
     flex: 1 
-    margin-bottom: 1.3rem ;
+    margin-bottom: 2rem ;
     align-items: end;
     justify-content: center;
+    
       img {
-      margin-left: 1rem;
-    }
+       margin-left: 1rem;
+      }
   }
 
   .footer-icons-wrapper {
     display: flex;
     flex: 1
     margin-bottom: 1.3rem;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
 
-    img {
-      margin-left: 1rem;
-    }
+      img {
+        margin-left: 1rem;
+      }
   }
 
 
@@ -215,6 +246,7 @@ const FooterWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    margin: 2rem 0;
 
     .input-box {
       display: flex;
@@ -228,7 +260,7 @@ const FooterWrapper = styled.div`
         padding:10px 10px 10px 5px;
         display:block;
         border:none;
-        border-bottom:1px solid var(--mainWhite);
+        border-bottom: 1px solid var(--mainWhite);
 
         ::placeholder {
           color: var(--mainWhite) !important;
@@ -245,7 +277,6 @@ const FooterWrapper = styled.div`
         font-size:18px;
         color: var(--mainWhite);
         border:none;
-        margin: 
         border-bottom:1px solid var(--mainWhite);
       }
 
@@ -253,26 +284,71 @@ const FooterWrapper = styled.div`
 
   } 
 
- 
-
-
 
   @media (min-width: 768px) {
 
     .content-wrapper {
       display: grid;
-      width: 100%;
-      height: 70%;
-      grid-template-columns: repeat(3, 1fr);
-      grid-gap: 10px;
-      justify-content: space-around;
+      grid-gap: 2em;
+      grid-template-columns: repeat(2, minmax(50%, 50%)) ;
+      grid-template-areas:
+      "logo  logo"
+      " socialIcons socialIcons "
+      "navFooter navFooter"
+      "checkoutIcons  footerIcons "
+      "formBox    formBox"
+      "poweredBy   poweredBy";
+ 
+        & > * {
+         align-self: baseline;
+        font-size: 1.3rem;
+        margin-top: 1.3rem;
+        }
+    }
+
+    .nav-footer {
+      grid-area: navFooter;
+      justify-self: center;
+
+    }
+
+    .social-icons-wrapper {
+      grid-area: socialIcons;
+      justify-self: center;
+
+    }
+
+    .checkout-icons-wrapper {
+      grid-area: checkoutIcons;
+      justify-self: end;
+
+    }
+    .footer-icons-wrapper {
+      grid-area: footerIcons;
+      justify-self: start;
+
+    }
+
+    .form-box {
+      grid-area: formBox;
+      justify-self: center;
+
+
+    }
+
+    .powered-by {
+      grid-area: poweredBy;
+      justify-self: center;
+
     }
 
     .logo {
+      grid-area: logo;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
     }
+
   }
 `;

@@ -23,7 +23,7 @@ export default function IconsAbout() {
           <div id="phoneMail">
             {icons.map(item => {
               return (
-                <div id="icon-box">
+                <div id="icon-box" key={item.info}>
                   <h5>{item.img}</h5>
                   <p>{item.text}</p>
                   <span>{item.info}</span>

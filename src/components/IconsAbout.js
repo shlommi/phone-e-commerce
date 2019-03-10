@@ -12,26 +12,32 @@ import styled from "styled-components";
 export default function IconsAbout() {
   const icons = [
     {
+      id: 1,
       text: "משלוח חינם",
       img: <FaShippingFast />
     },
     {
+      id: 2,
       text: "החזר כספי 105%",
       img: <FaShekelSign />
     },
     {
+      id: 3,
       text: "קניה מאובטחת",
       img: <FaShieldAlt />
     },
     {
+      id: 4,
       text: "19 שנות ניסיון",
       img: <FaHandshake />
     },
     {
+      id: 5,
       text: "מוצרים ללא פרבנים",
       img: <FaEnvira />
     },
     {
+      id: 6,
       text: "מאושר משרד הבריאות",
       img: <FaClipboardCheck />
     }
@@ -44,7 +50,7 @@ export default function IconsAbout() {
           <div id="my-grid">
             {icons.map(item => {
               return (
-                <div id="icon-box">
+                <div id="icon-box" key={item.id}>
                   <span>
                     <h5>{item.img}</h5>
                   </span>
