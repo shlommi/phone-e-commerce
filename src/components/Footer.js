@@ -19,7 +19,7 @@ export default function Footer() {
             </div>
             <Link to="/">טוליפ נטורל</Link>
           </div>
-          <div className="nav-footer ">
+          <div className="nav-footer">
             <Link to="/">דף הבית</Link>
             <Link to="/about">אודות טוליפ</Link>
             <Link to="/">המוצרים שלנו</Link>
@@ -200,7 +200,7 @@ const FooterWrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     margin-bottom: 1.3rem;
   }
 
@@ -290,17 +290,16 @@ const FooterWrapper = styled.div`
     .content-wrapper {
       display: grid;
       grid-gap: 2em;
-      grid-template-columns: repeat(2, minmax(50%, 50%)) ;
       grid-template-areas:
-      "logo  logo"
-      " socialIcons socialIcons "
-      "navFooter navFooter"
-      "checkoutIcons  footerIcons "
-      "formBox    formBox"
-      "poweredBy   poweredBy";
- 
+      "logo logo"
+      "socialIcons socialIcons"
+      "navFooter navFooter "
+      "formBox formBox "
+      "checkoutIcons footerIcons"
+      "poweredBy poweredBy";
+      align-items: center;
+
         & > * {
-         align-self: baseline;
         font-size: 1.3rem;
         margin-top: 1.3rem;
         }
@@ -309,8 +308,19 @@ const FooterWrapper = styled.div`
     .nav-footer {
       grid-area: navFooter;
       justify-self: center;
+       flex-direction: row;
 
+       &>*:after {
+           content: "|" ;
+           padding: 0.7rem;
+       }
+
+       &>*:last-child:after {
+            content: '';
+        }
     }
+
+ 
 
     .social-icons-wrapper {
       grid-area: socialIcons;
@@ -320,12 +330,11 @@ const FooterWrapper = styled.div`
 
     .checkout-icons-wrapper {
       grid-area: checkoutIcons;
-      justify-self: end;
 
     }
     .footer-icons-wrapper {
       grid-area: footerIcons;
-      justify-self: start;
+      justify-self: center;
 
     }
 
@@ -348,6 +357,8 @@ const FooterWrapper = styled.div`
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      justify-self: center;
+
     }
 
   }
