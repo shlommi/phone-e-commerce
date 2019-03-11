@@ -200,7 +200,7 @@ const FooterWrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: start;
+    align-items: center;
     margin-bottom: 1.3rem;
   }
 
@@ -308,6 +308,7 @@ const FooterWrapper = styled.div`
     .nav-footer {
       grid-area: navFooter;
       justify-self: center;
+      align-items: start;
        flex-direction: row;
 
        &>*:after {
