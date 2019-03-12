@@ -20,18 +20,10 @@ export default class Navbar extends Component {
           <Link to="/" className="nav-link">
             המוצרים שלנו
           </Link>
-          <Link to="/contact" className="nav-link">
-            צרי קשר
-          </Link>
-        </div>
-        <div className="cart">
           <Link to="/cart">
-            <button className="cart__button">
-              <span className="mr-1">
-                <i className="fas fa-cart-plus" />
-              </span>
-              העגלה שלי
-            </button>
+            <span className="mr-1">
+              <i className="fas fa-cart-plus" />
+            </span>
           </Link>
         </div>
       </NavWrapper>
@@ -46,12 +38,12 @@ const NavWrapper = styled.nav`
   grid-template-rows: repeat(3, auto-fill);
 
   .nav-link {
-    font-size: 4vw;
+    font-size: 1.3rem;
     color: var(--mainWhite) !important;
   }
 
   img {
-    width: 4vw;
+    width: 1.2rem;
   }
 
   div button {
@@ -59,7 +51,7 @@ const NavWrapper = styled.nav`
   }
 
   #logo {
-    font-size: 4.5vw;
+    font-size: 1.4rem;
     grid-column: 1 / 2;
     grid-row: 1 / 2;
     display: flex;
@@ -102,8 +94,9 @@ const NavWrapper = styled.nav`
     }
   }
 
-  .cart span i {
-    margin-right: 0.1rem;
+  a span i {
+    margin-right: 1rem;
+    color: var(--mainYellow);
   }
 
   .menu-wrapper {
@@ -122,7 +115,7 @@ const NavWrapper = styled.nav`
     #logo {
       grid-column: 1 / -1;
       grid-row: 1 / 2;
-      font-size: 2vw;
+      font-size: 1.5rem;
     }
 
     .menu-wrapper {
@@ -135,11 +128,11 @@ const NavWrapper = styled.nav`
     }
 
     .nav-link {
-      font-size: 2.5vw;
+      font-size: 1.5rem;
     }
 
     img {
-      width: 3vw;
+      width: 1.7rem;
     }
 
     div button {
@@ -161,14 +154,14 @@ const NavWrapper = styled.nav`
     }
 
     #logo {
-      font-size: 0.5vw;
+      font-size: 1.5rem;
     }
     .nav-link {
-      font-size: 2vw;
+      font-size: 1.5rem;
     }
 
     img {
-      width: 2vw;
+      width: 1.7rem;
     }
 
     div button {

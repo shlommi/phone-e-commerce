@@ -46,7 +46,7 @@ const IconsWrapper = styled.div`
   }
 
   h5 {
-    font-size: 8vw !important;
+    font-size: 1.7rem !important;
     text-align: center;
   }
 
@@ -74,7 +74,7 @@ const IconsWrapper = styled.div`
     }
 
     h5 {
-      font-size: 6vw !important;
+      font-size: 1.7rem !important;
     }
   }
 
@@ -86,7 +86,7 @@ const IconsWrapper = styled.div`
       justify-content: space-around;
 
       h5 {
-        font-size: 4vw !important;
+        font-size: 2.7rem !important;
       }
     }
   }
