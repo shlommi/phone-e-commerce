@@ -16,8 +16,8 @@ export default class Details extends Component {
             <div className="container py-5">
               {/* title */}
               <div className="row">
-                <div className="col-12 mx-auto text-center text-blue my-5">
-                  <h1>{title}</h1>
+                <div className="col-12 mx-auto text-center text-blue my-3">
+                  <h3>{title}</h3>
                 </div>
               </div>
               {/* end of title */}
