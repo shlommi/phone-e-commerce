@@ -150,12 +150,10 @@ export default function Footer() {
 
 const FooterWrapper = styled.div`
   background-color: var(--mainBlue);
-  min-height: 80vh;
   color: var(--mainWhite);
   padding: 1rem;
   font-size: 1.2rem;
   position: relative;
-
 
   hr {
     width: 50vw;
@@ -163,7 +161,6 @@ const FooterWrapper = styled.div`
     background-color: var(--mainWhite) !important;
     margin: 10px auto;
   }
-
 
   .logo {
     display: none;
@@ -189,12 +186,9 @@ const FooterWrapper = styled.div`
       text-align: center;
       position: bottom;
       padding: 0;
-      bottom:0;
+      bottom: 0;
     }
-
-
   }
-
 
   .nav-footer {
     display: flex;
@@ -206,40 +200,39 @@ const FooterWrapper = styled.div`
 
   .social-icons-wrapper {
     display: flex;
-    flex: 1 
+    flex: 1;
     margin-bottom: 1.3rem;
     align-items: end;
     justify-content: center;
 
-      & span {
-        margin-left: 0.6rem;
-      }
+    & span {
+      margin-left: 0.6rem;
+    }
   }
 
   .checkout-icons-wrapper {
     display: flex;
-    flex: 1 
-    margin-bottom: 2rem ;
+    flex: 1;
+    margin-bottom: 2rem;
     align-items: end;
     justify-content: center;
-    
-      img {
-       margin-left: 1rem;
-      }
+
+    img {
+      margin-left: 1rem;
+    }
   }
 
   .footer-icons-wrapper {
     display: flex;
-    flex: 1
+    flex: 1;
     margin-bottom: 1.3rem;
     justify-content: center;
     align-items: center;
 
-      img {
-        margin-left: 1rem;
-      }
+    img {
+      margin-left: 1rem;
+    }
   }
-
 
   .form-box {
     display: flex;
@@ -252,14 +245,13 @@ const FooterWrapper = styled.div`
       display: flex;
       flex: 0 0 60%;
 
-
       &__input {
-        font-size:16px;
+        font-size: 16px;
         background: transparent;
         color: var(--mainWhite);
-        padding:10px 10px 10px 5px;
-        display:block;
-        border:none;
+        padding: 10px 10px 10px 5px;
+        display: block;
+        border: none;
         border-bottom: 1px solid var(--mainWhite);
 
         ::placeholder {
@@ -267,89 +259,76 @@ const FooterWrapper = styled.div`
         }
 
         &:focus {
-          outline:none; 
+          outline: none;
         }
-
-     }
+      }
 
       &__btn {
         background: transparent;
-        font-size:18px;
+        font-size: 18px;
         color: var(--mainWhite);
-        border:none;
-        border-bottom:1px solid var(--mainWhite);
+        border: none;
+        border-bottom: 1px solid var(--mainWhite);
       }
-
     }
-
-  } 
-
+  }
 
   @media (min-width: 768px) {
-
     .content-wrapper {
       display: grid;
       grid-gap: 2em;
       grid-template-areas:
-      "logo logo"
-      "socialIcons socialIcons"
-      "navFooter navFooter "
-      "formBox formBox "
-      "checkoutIcons footerIcons"
-      "poweredBy poweredBy";
+        "logo logo"
+        "socialIcons socialIcons"
+        "navFooter navFooter "
+        "formBox formBox "
+        "checkoutIcons footerIcons"
+        "poweredBy poweredBy";
       align-items: center;
 
-        & > * {
+      & > * {
         font-size: 1.3rem;
         margin-top: 1.3rem;
-        }
+      }
     }
 
     .nav-footer {
       grid-area: navFooter;
       justify-self: center;
       align-items: start;
-       flex-direction: row;
+      flex-direction: row;
 
-       &>*:after {
-           content: "|" ;
-           padding: 0.7rem;
-       }
+      & > *:after {
+        content: "|";
+        padding: 0.7rem;
+      }
 
-       &>*:last-child:after {
-            content: '';
-        }
+      & > *:last-child:after {
+        content: "";
+      }
     }
-
- 
 
     .social-icons-wrapper {
       grid-area: socialIcons;
       justify-self: center;
-
     }
 
     .checkout-icons-wrapper {
       grid-area: checkoutIcons;
-
     }
     .footer-icons-wrapper {
       grid-area: footerIcons;
       justify-self: center;
-
     }
 
     .form-box {
       grid-area: formBox;
       justify-self: center;
-
-
     }
 
     .powered-by {
       grid-area: poweredBy;
       justify-self: center;
-
     }
 
     .logo {
@@ -359,8 +338,6 @@ const FooterWrapper = styled.div`
       align-items: center;
       justify-content: center;
       justify-self: center;
-
     }
-
   }
 `;

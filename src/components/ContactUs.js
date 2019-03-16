@@ -4,6 +4,9 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 
 export default function ContactUs() {
+  (function() {
+    window.scrollTo(0, 0);
+  })();
   return (
     <React.Fragment>
       <div className="container">

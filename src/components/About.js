@@ -5,6 +5,9 @@ import { FaBookOpen } from "react-icons/fa";
 import IconsAbout from "./IconsAbout";
 
 export default function About() {
+  (function() {
+    window.scrollTo(0, 0);
+  })();
   return (
     <React.Fragment>
       <ProductConsumer>

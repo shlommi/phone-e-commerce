@@ -38,7 +38,7 @@ const NavWrapper = styled.nav`
   grid-template-rows: repeat(3, auto-fill);
 
   .nav-link {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     color: var(--mainWhite) !important;
   }
 

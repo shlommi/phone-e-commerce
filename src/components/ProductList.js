@@ -5,6 +5,9 @@ import { FaSeedling } from "react-icons/fa";
 import { ProductConsumer } from "../context";
 
 export default class ProductList extends Component {
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
   render() {
     return (
       <React.Fragment>
