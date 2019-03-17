@@ -276,7 +276,7 @@ const FooterWrapper = styled.div`
   @media (min-width: 768px) {
     .content-wrapper {
       display: grid;
-      grid-gap: 2em;
+      grid-gap: 0.5rem;
       grid-template-areas:
         "logo logo"
         "socialIcons socialIcons"

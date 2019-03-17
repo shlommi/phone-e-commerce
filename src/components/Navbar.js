@@ -34,6 +34,7 @@ export default class Navbar extends Component {
 const NavWrapper = styled.nav`
   background: var(--mainBlue);
   display: grid;
+  padding: 0.5rem 0;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(3, auto-fill);
 
